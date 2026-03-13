@@ -1587,6 +1587,26 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 99.06) (xy 109.22 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d783161-f1b4-4bdd-8282-2f88676f32b9")
+	)
+	(wire
+		(pts
+			(xy 104.14 99.06) (xy 109.22 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "591e8905-f84a-45bf-b6b7-d835023720bc")
+	)
+	(wire
+		(pts
 			(xy 135.89 116.84) (xy 135.89 119.38)
 		)
 		(stroke
@@ -1594,6 +1614,16 @@
 			(type default)
 		)
 		(uuid "5bcee05c-fbf9-4299-8280-30cf80a7a89a")
+	)
+	(wire
+		(pts
+			(xy 123.19 99.06) (xy 111.76 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f2c0cae-547e-4fd8-b383-982b61186426")
 	)
 	(wire
 		(pts
@@ -1607,13 +1637,13 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 99.06) (xy 123.19 99.06)
+			(xy 111.76 101.6) (xy 123.19 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "69c08625-a583-421b-97ed-deb4c95253db")
+		(uuid "64e3b587-83c8-4cd7-954e-d5b3b7409cdf")
 	)
 	(wire
 		(pts
@@ -1674,6 +1704,16 @@
 			(type default)
 		)
 		(uuid "9f4c2584-287f-4f22-b586-608f5303ec4b")
+	)
+	(wire
+		(pts
+			(xy 104.14 101.6) (xy 109.22 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fe11e58-1b0f-4389-aad3-913e822456c5")
 	)
 	(wire
 		(pts
@@ -1767,6 +1807,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 99.06) (xy 111.76 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5ad836f-87f1-49d7-a032-f4dee395d754")
+	)
+	(wire
+		(pts
 			(xy 176.53 105.41) (xy 173.99 105.41)
 		)
 		(stroke
@@ -1827,16 +1877,6 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 101.6) (xy 123.19 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed643803-2f15-47f1-bc4f-1694b4b28ee4")
-	)
-	(wire
-		(pts
 			(xy 130.81 101.6) (xy 140.97 101.6)
 		)
 		(stroke
@@ -1874,6 +1914,46 @@
 			(type default)
 		)
 		(uuid "fde05def-d603-4081-a281-b080724e8527")
+	)
+	(label "CAN_RX"
+		(at 115.57 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0f3ecc75-544f-42f1-b8d2-a39cd4fa6f86")
+	)
+	(label "CAN_TX"
+		(at 115.57 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4ff6c0a6-45a6-4f3f-9141-54aea68281e1")
+	)
+	(label "CANL"
+		(at 198.12 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "574d8ff6-b71f-4c27-b3b3-fce2feb496f9")
+	)
+	(label "CANH"
+		(at 198.12 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f8d16b5e-697b-4a6f-9e61-45c92d29c364")
 	)
 	(symbol
 		(lib_id "Device:R")
