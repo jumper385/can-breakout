@@ -38,9 +38,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           changelog_increment_filename: _changelog_body.md
 
+      - name: move to renamed folder
+        run: mv ./Generated/can-breakout-* ./Generated/can-breakout-${{ steps.cz.outputs.version }}
+
       - name: Create release tarball
         if: steps.cz.outputs.version != ''
-        run: tar -czf can-breakout_v${{ steps.cz.outputs.version }}.tar.gz Generated
+        run: tar -czf can-breakout_v${{ steps.cz.outputs.version }}.tar.gz can-breakout-${{ steps.cz.outputs.version }}
 
       - name: Upload Generated Artifacts
         uses: actions/upload-artifact@v4
