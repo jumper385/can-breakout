@@ -38,28 +38,15 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           changelog_increment_filename: _changelog_body.md
 
-      - name: Rename artifacts with version
+      - name: Create release tarball
         if: steps.cz.outputs.version != ''
-        run: |
-          VERSION="${{ steps.cz.outputs.version }}"
-          mkdir -p Generated-versioned
-          for f in Generated/*; do
-            [ -f "$f" ] || continue
-            base="$(basename "$f")"
-            name="${base%.*}"
-            ext="${base##*.}"
-            if [ "$name" = "$ext" ]; then
-              cp "$f" "Generated-versioned/${name}_v${VERSION}"
-            else
-              cp "$f" "Generated-versioned/${name}_v${VERSION}.${ext}"
-            fi
-          done
+        run: tar -czf can-breakout_v${{ steps.cz.outputs.version }}.tar.gz Generated
 
       - name: Upload Generated Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.cz.outputs.version != '' && format('can-breakout_v{0}', steps.cz.outputs.version) || 'can-breakout' }}
-          path: ${{ steps.cz.outputs.version != '' && './Generated-versioned' || './Generated' }}
+          path: ${{ steps.cz.outputs.version != '' && format('can-breakout_v{0}.tar.gz', steps.cz.outputs.version) || './Generated' }}
 
       - name: Create release
         if: steps.cz.outputs.version != ''
@@ -68,4 +55,4 @@ jobs:
           tag_name: v${{ steps.cz.outputs.version }}
           name: Release v${{ steps.cz.outputs.version }}
           body_path: _changelog_body.md
-          files: ./Generated-versioned/*
+          files: can-breakout_v${{ steps.cz.outputs.version }}.tar.gz
